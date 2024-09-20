@@ -4,10 +4,17 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] float delay = 1f;
+    Movement movement;
+
+    void Start() 
+    {
+        movement = GetComponent<Movement>();
+    }
+
     /// <summary>
     /// When player collides with another object
     /// </summary>
-    /// <param name="other"></param>
     private void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
@@ -16,15 +23,35 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("Friendly");
                 break;
             case "Finish":
-                LoadNextLevel();
+                FinishSceneSequence();
                 break;
             case "Fuel":
                 Debug.Log("Fuel");
                 break;
             default:
-                ReloadScene();
+                StartCreashSequence();
                 break;
         }
+    }
+
+    /// <summary>
+    /// Handle crash event
+    /// </summary>
+    void StartCreashSequence()
+    {
+        movement.enabled = false;
+        movement.audioSource.Stop();
+        Invoke("ReloadScene", delay);
+    }
+
+    /// <summary>
+    /// Handle crash event
+    /// </summary>
+    void FinishSceneSequence()
+    {
+        movement.enabled = false;
+        movement.audioSource.Stop();
+        Invoke("LoadNextLevel", delay);
     }
 
     /// <summary>
@@ -42,7 +69,6 @@ public class CollisionHandler : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneIndex);
         }
-
     }
 
     /// <summary>

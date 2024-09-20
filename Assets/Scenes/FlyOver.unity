@@ -605,8 +605,8 @@ PrefabInstance:
       value: Rockets
       objectReference: {fileID: 0}
     - target: {fileID: 5465717309109625379, guid: 39a88ffe8c254ab44af576f46ab307e6, type: 3}
-      propertyPath: m_Volume
-      value: 0.3
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

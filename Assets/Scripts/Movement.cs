@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     [SerializeField] float mainThrust = 1000f;
     [SerializeField] float rotationThrust = 200f;
     Rigidbody rb;
-    AudioSource audioSource;
+    public AudioSource audioSource { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class NewBehaviourScript : MonoBehaviour
         ProcessRotation();
     }
 
-    void ProcessThrust()
+    public void ProcessThrust()
     {
         if(Input.GetKey(KeyCode.Space))
         {
