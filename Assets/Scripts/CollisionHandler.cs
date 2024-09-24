@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float delay = 1f;
+    [SerializeField] AudioClip collisionSound;
+    [SerializeField] AudioClip landingSound;
     Movement movement;
+    AudioSource audioSource;
 
     void Start() 
     {
         movement = GetComponent<Movement>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -39,6 +43,7 @@ public class CollisionHandler : MonoBehaviour
     /// </summary>
     void StartCreashSequence()
     {
+        audioSource.PlayOneShot(collisionSound); 
         movement.enabled = false;
         movement.audioSource.Stop();
         Invoke("ReloadScene", delay);
@@ -49,6 +54,7 @@ public class CollisionHandler : MonoBehaviour
     /// </summary>
     void FinishSceneSequence()
     {
+        audioSource.PlayOneShot(landingSound); 
         movement.enabled = false;
         movement.audioSource.Stop();
         Invoke("LoadNextLevel", delay);
