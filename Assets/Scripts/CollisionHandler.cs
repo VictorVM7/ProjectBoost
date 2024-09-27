@@ -4,15 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-    [SerializeField] float delay = 1f;
+    [SerializeField] float delay = 2f;
     [SerializeField] AudioClip collisionSound;
     [SerializeField] AudioClip landingSound;
-    Movement movement;
     AudioSource audioSource;
+
+    bool isTransitioning = false;
 
     void Start() 
     {
-        movement = GetComponent<Movement>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -21,6 +21,11 @@ public class CollisionHandler : MonoBehaviour
     /// </summary>
     private void OnCollisionEnter(Collision other)
     {
+        if (isTransitioning)
+        {
+            return;
+        }
+
         switch (other.gameObject.tag)
         {
             case "Friendly":
@@ -43,9 +48,10 @@ public class CollisionHandler : MonoBehaviour
     /// </summary>
     void StartCreashSequence()
     {
+        isTransitioning = true;
+        audioSource.Stop();
         audioSource.PlayOneShot(collisionSound); 
-        movement.enabled = false;
-        movement.audioSource.Stop();
+        GetComponent<Movement>().enabled = false;
         Invoke("ReloadScene", delay);
     }
 
@@ -54,9 +60,10 @@ public class CollisionHandler : MonoBehaviour
     /// </summary>
     void FinishSceneSequence()
     {
+        isTransitioning = true;
+        audioSource.Stop();
         audioSource.PlayOneShot(landingSound); 
-        movement.enabled = false;
-        movement.audioSource.Stop();
+        GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel", delay);
     }
 
