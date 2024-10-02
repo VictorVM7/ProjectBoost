@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 1339457bd83c0ed468ed14d7a6b139dc, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -244,7 +244,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -377,17 +377,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: LandingPad
       objectReference: {fileID: 0}
-    - target: {fileID: 5011272396749848481, guid: e7548c26bad11174ea1bda7f291e71a0, type: 3}
-      propertyPath: m_TagString
-      value: Finish
-      objectReference: {fileID: 0}
     - target: {fileID: 9045277544907388469, guid: e7548c26bad11174ea1bda7f291e71a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 9045277544907388469, guid: e7548c26bad11174ea1bda7f291e71a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9045277544907388469, guid: e7548c26bad11174ea1bda7f291e71a0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -505,7 +501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1455003026566582583, guid: 8f2a3d954b05db044943ee2cf8f7df34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1455003026566582583, guid: 8f2a3d954b05db044943ee2cf8f7df34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -543,10 +539,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaunchPad
       objectReference: {fileID: 0}
-    - target: {fileID: 2832012633062867755, guid: 8f2a3d954b05db044943ee2cf8f7df34, type: 3}
-      propertyPath: m_TagString
-      value: Friendly
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -566,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 418017495256635904, guid: 39a88ffe8c254ab44af576f46ab307e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 7.72
       objectReference: {fileID: 0}
     - target: {fileID: 418017495256635904, guid: 39a88ffe8c254ab44af576f46ab307e6, type: 3}
       propertyPath: m_LocalPosition.z

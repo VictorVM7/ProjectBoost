@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 840767677619162248}
   m_Layer: 0
   m_Name: LaunchPad
-  m_TagString: Untagged
+  m_TagString: Friendly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -40.1, y: 2, z: 0}
-  m_LocalScale: {x: 6.7187, y: 4, z: 6.7187}
+  m_LocalScale: {x: 6.7187, y: 1.2584, z: 6.7187}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
